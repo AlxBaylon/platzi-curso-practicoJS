@@ -29,13 +29,19 @@ console.group("Triángulos");
 // console.log(`La base del triángulo es: ${baseTri} cm`);
 // console.log(`La altura del triángulo es: ${alturaTri} cm`);
 
-function CalcularPeriTri(ladoTri1, ladoTri2, baseTri){
-	const periTri = ladoTri1 + ladoTri2 + baseTri;
+function CalcularPeriTri(){
+	const inputTriL1 = document.getElementById("InputTriL1");
+	const inputTriL2 = document.getElementById("InputTriL2");
+	const inputTriB = document.getElementById("InputTriB");
+	
+	const periTri = parseFloat(inputTriL1.value) + parseFloat(inputTriL2.value) + parseFloat(inputTriB.value);
 	console.log(`El perímetro del triángulo es: ${periTri} cm`);
 }
 
 function CalcularAreaTri(baseTri, alturaTri){
-	const areaTri = (baseTri * alturaTri)/2;
+	const inputTriB = document.getElementById("InputTriB");
+	const inputTriH = document.getElementById("InputTriH");
+	const areaTri = (inputTriB.value * inputTriH.value)/2;
 	console.log(`El área del triángulo es: ${areaTri} cm2`);
 }
 console.groupEnd();
