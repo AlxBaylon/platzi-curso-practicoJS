@@ -59,13 +59,26 @@ function CalcularDiametro(radio){
 	return radio*2;
 }
 
-function CalcularPeriCir(radioCir){
+function PerimetroCir(radioCir){
 	const periCir = CalcularDiametro(radioCir) * Math.PI;
-	console.log(`El perímetro del Círculo es: ${periCir.toFixed(2)} cm`);
+	return `El perímetro del Círculo es: ${periCir.toFixed(2)} cm`;
 }
-
-function CalcularAreaCir(radioCir){
+function AreaCir(radioCir){
 	const areaCir = (radioCir**2) * Math.PI;
 	console.log(`El área del círculo es: ${areaCir.toFixed(2)} cm2`);
+}
+
+function CalcularPeriCir(){
+	const inputCirculo = document.getElementById("InputCirculo");
+	const radius_value =  parseFloat(inputCirculo.value);
+
+	const perimetro = PerimetroCir(radius_value);
+	console.log(perimetro);
+}
+function CalcularAreaCir(){
+	const inputCirculo = document.getElementById("InputCirculo");
+	const radius_value =  parseFloat(inputCirculo.value);
+
+	const area = AreaCir(radius_value);
 }
 console.groupEnd();
