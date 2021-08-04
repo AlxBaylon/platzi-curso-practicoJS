@@ -3,13 +3,17 @@ console.group("Cuadrados");
 // const ladoCuad = 5;
 // console.log(`El lado del cuadrado es: ${ladoCuad} cm`);
 
-function CalcularPeriCuad (ladoCuad){
-	const periCuad = ladoCuad * 4;
+function CalcularPeriCuad(){
+	const input = document.getElementById("InputCuadrado");
+	const value = input.value;
+	const periCuad = 4 * value;
 	console.log(`El perímetro del cuadrado es: ${periCuad} cm`);
 }
 
-function CalcularAreaCuad (ladoCuad){
-	const areaCuad = ladoCuad**2;
+function CalcularAreaCuad(ladoCuad){
+	const input = document.getElementById("InputCuadrado");
+	const value = input.value;
+	const areaCuad = value**2;
 	console.log(`El área del cuadrado es: ${areaCuad} cm2`);
 }
 console.groupEnd();
