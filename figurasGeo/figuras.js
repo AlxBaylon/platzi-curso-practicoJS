@@ -82,3 +82,27 @@ function CalcularAreaCir(){
 	const area = AreaCir(radius_value);
 }
 console.groupEnd();
+
+//----------------- Altura triángulo isósceles --------------------------------
+function CalcularAlturaTriI(){
+	const inputTriL1 = document.getElementById('InputTriIL1');
+	const triL1 = parseFloat(inputTriL1.value);
+ 
+	const inputTriL2 = document.getElementById('InputTriIL2');
+	const triL2 =  parseFloat(inputTriL2.value);
+
+	const inputBTri = document.getElementById('InputTriIB');
+	const triB = parseFloat(inputBTri.value);
+
+	if(triL2 !== triL1 || triB >= (triL1+triL2)){
+		alert("No es un triángulo isósceles");
+	} else {
+		AlturaPitagoras(triL1, triB);
+	}
+}
+
+function AlturaPitagoras(lado1, base){
+	const nuevaBaseTri = base/2;
+	const alturaTriI = Math.sqrt((lado1**2)-(nuevaBaseTri**2));
+	alert(`La altura del triángulo isósceles es: ${alturaTriI.toFixed(2)}cm`);
+} 
