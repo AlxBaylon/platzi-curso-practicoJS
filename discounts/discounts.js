@@ -1,9 +1,9 @@
 // const precio = 150;
 // const descuento = 13;
 const coupons = [
-	"C10%",
-	"C15%",
-	"C25%",
+	{name:"C10%", discount: 10},
+	{name:"C15%", discount: 15},
+	{name:"C25%", discount: 25},
 ]
 
 function CalcularPrecioConDescuento(precio, descuento){
@@ -20,24 +20,18 @@ function onClickDiscountPrice(){
 	const inputCoupon = document.getElementById("InputCupon");
 	const couponValue = inputCoupon.value;
 
-	let discountValue = 0;
+	const isCouponValueValid = function (coupon) {
+		return coupon.name === couponValue;
+	}
+
+	const userCoupon = coupons.find(isCouponValueValid);
 
 	if(priceValue == 0 || couponValue == ""){
 		alert(`Ingrese valores correctos`);
-	} else if(!coupons.includes(couponValue)){
-		alert(`Cupón no válido`);
+	} else if(!userCoupon){
+		alert(`Cupón "${ couponValue }" no es válido`);
 	} else {
-		switch(couponValue){
-			case coupons[0]:
-				discountValue = 10;
-				break;
-			case coupons[1]:
-				discountValue = 15;
-				break;
-			case coupons[2]:
-				discountValue = 25;
-				break;
-		}
+		const discountValue = userCoupon.discount;
 		const precioConDescuento = CalcularPrecioConDescuento(priceValue, discountValue);
 
 		const resultP = document.getElementById("ResultP");
