@@ -24,6 +24,8 @@ function onClickDiscountPrice(){
 
 	if(priceValue == 0 || couponValue == ""){
 		alert(`Ingrese valores correctos`);
+	} else if(!coupons.includes(couponValue)){
+		alert(`Cupón no válido`);
 	} else {
 		switch(couponValue){
 			case coupons[0]:
