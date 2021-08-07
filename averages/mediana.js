@@ -1,7 +1,5 @@
 const lista1 = [100, 250, 300, 200, 500, 40000];
 
-const mitadLista1 = parseInt(lista1.length/2);
-
 const ordenarLista = (arrayNum) => {
 	arrayNum.sort((a,b) => a-b);
 };
@@ -28,17 +26,15 @@ function CalcularMediaAritmetica(lista) {
 	return promedioLista;
 }
 
-let mediana;
-
-lista1.forEach((numero) =>{alert(numero);})
-
-if(esPar(lista1.length)){
-	ordenarLista(lista1);
-	const elemento1 = lista1[mitadLista1 - 1];
-	const elemento2 = lista1[mitadLista1];
-
-	mediana = CalcularMediaAritmetica([elemento1, elemento2]);
-} else if(!esPar(lista1.length)) {
-	ordenarLista(lista1);
-	mediana = lista1[mitadLista1];
+const CalcularMediana = (array) => {
+	ordenarLista(array);
+	const mitadLista1 = parseInt(array.length/2);
+	if(esPar(array.length)){
+		const elemento1 = array[mitadLista1 - 1];
+		const elemento2 = array[mitadLista1];
+	
+		return mediana = CalcularMediaAritmetica([elemento1, elemento2]);
+	} else if(!esPar(array.length)) {
+		return mediana = array[mitadLista1];
+	}
 }
